@@ -1,12 +1,13 @@
 class Solution:
     def maxSubarraySumCircular(self, nums: List[int]) -> int:
-        total = sum(nums)
+        total = nums[0]
         currmax= nums[0]
         currmin = nums[0]
         n = len(nums)
         max_sum = nums[0]
         min_sum=nums[0]
         for i in range(1,n):
+            total+=nums[i]
             currmax = max(nums[i],currmax+nums[i])
             max_sum = max(max_sum,currmax)
             currmin = min(nums[i],currmin+nums[i])
