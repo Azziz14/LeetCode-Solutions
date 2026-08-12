@@ -12,10 +12,10 @@ class Solution:
             while len(basket)>2:
                 old_fruit=fruits[left]
                 basket[old_fruit]-=1
-                if basket[old_fruit]==0:
+                if basket[old_fruit] ==0:
                     del basket[old_fruit]
-                left+=1
-            current_length=i-left+1
-            if current_length>answer:
-                answer=current_length
+                left +=1
+            current_length = i -left+1
+            if current_length >answer:
+                answer = current_length
         return answer
