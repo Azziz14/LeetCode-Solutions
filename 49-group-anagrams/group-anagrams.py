@@ -3,8 +3,10 @@ from typing import List
 
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        anagram_groups = defaultdict(list)
-        for string in strs:
-            sorted_key = ''.join(sorted(string))
-            anagram_groups[sorted_key].append(string)
-        return list(anagram_groups.values())
+        group={}
+        for ch in strs: 
+            key = ''.join(sorted(ch))
+            if key not in group:
+                group[key]=[]
+            group[key].append(ch)
+        return list(group.values())
